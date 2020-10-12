@@ -35,7 +35,33 @@
       <title>HealthBeauty</title>
       <link href="assets/pages/7ace0473-45ee-4806-980a-8a762c1188fa/content/lAuBGWyhjBHRZhg/css/bootstrap.min.css" rel="stylesheet"/>
       <link href="assets/pages/7ace0473-45ee-4806-980a-8a762c1188fa/content/lAuBGWyhjBHRZhg/css/style.css" rel="stylesheet"/>
-     <script src="jquery-3.4.1.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return "";
+    }
+    else{
+       return results[1] || 0;
+    }
+}
+
+
+</script>
+<script>
+    
+    $( document ).ready(function() {
+        $("#sub1").val(decodeURIComponent($.urlParam('sub1')));
+        $("#sub2").val(decodeURIComponent($.urlParam('sub2')));
+        $("#sub3").val(decodeURIComponent($.urlParam('sub3')));
+        $("#sub4").val(decodeURIComponent($.urlParam('sub4')));
+        $("#sub5").val(decodeURIComponent($.urlParam('sub5')));
+        });
+        
+</script>       
     
       <!-- INTH_SNIPPET_TOP -->
       
@@ -265,7 +291,11 @@ var x = setInterval(function() {
                      <br><br><br>
                      <form id="buyForm" action="https://in.healthynature.xyz/17523/Thor-3/order.php" class="orderForm x_order_form buyForm" method="post">
                          
-                          
+                                                  <input type="hidden" id="sub1" name="sub1">
+  <input type="hidden" id="sub2" name="sub2">
+   <input type="hidden" id="sub3" name="sub3">
+    <input type="hidden" id="sub4" name="sub4">
+     <input type="hidden" id="sub5" name="sub5">
                          
                         <label for="name">आपका पहला नाम:</label>
                         <input class="form-control input-form" name="name" id="name"  placeholder="" type="text" required >
